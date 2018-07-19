@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=user.username%></title>
+</head>
+<body>
+  <h1>Photo Library for <%=user.username%></h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Photos by <%=user.username%></h2>
+    
+      <% for (let i = 0; i < user.photos.length; i++) { %>
+        <img src="<%=user.photos[i]%>">
+        <a href="<%=user.photos[i].url%>"><%=user.photos[i].title%></a>
+      <% } %>
+  </section>
+
+  <section>
+    <a href="/users/<%=user.id%>/edit">Edit User Info</a>
+  </section>
+
+</body>
+</html>
